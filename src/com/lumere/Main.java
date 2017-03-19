@@ -14,12 +14,13 @@ public class Main extends Application {
 
     @FXML
     public TilePane board;
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage stage)  {
+    public void start(Stage stage) {
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("window.fxml"));
@@ -30,11 +31,7 @@ public class Main extends Application {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
 
-
-
         stage.show();
-
-        int x = 2;
     }
 
     private void initGui() {

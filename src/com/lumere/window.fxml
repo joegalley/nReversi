@@ -35,7 +35,12 @@
         <VBox prefHeight="343.0" prefWidth="190.0" BorderPane.alignment="CENTER"/>
     </left>
     <right>
-        <VBox prefHeight="343.0" prefWidth="190.0" BorderPane.alignment="CENTER"/>
+        <VBox prefHeight="343.0" prefWidth="190.0" BorderPane.alignment="CENTER">
+            <TextArea fx:id="logOutput" prefHeight="300.0" prefWidth="100.0" style="-fx-background-color: black"
+                      editable="false">
+
+            </TextArea>
+        </VBox>
     </right>
     <bottom>
         <HBox prefHeight="32.0" prefWidth="800.0" BorderPane.alignment="CENTER"/>

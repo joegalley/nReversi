@@ -1,16 +1,18 @@
 package com.lumere;
 
 
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class BoardCell extends StackPane {
 
-    private STATE currentState;
+    private CELL_STATE currentState;
 
 
-    public enum STATE {
+    public enum CELL_STATE {
         EMPTY,
         WHITE,
         BLACK,
@@ -19,10 +21,12 @@ public class BoardCell extends StackPane {
 
     public BoardCell() {
         super();
-        this.currentState = STATE.EMPTY;
+        GridPane.setVgrow(this, Priority.ALWAYS);
+        GridPane.setHgrow(this, Priority.ALWAYS);
+        this.currentState = CELL_STATE.EMPTY;
     }
 
-    public void setState(STATE newState) {
+    public void setState(CELL_STATE newState) {
         this.setManaged(false);
 
         Circle circle = new Circle(this.getWidth() / 2, this.getHeight() / 2, this.getHeight() / 2);
@@ -56,11 +60,11 @@ public class BoardCell extends StackPane {
         this.getChildren().add(circle);
     }
 
-    public STATE getCurrentState() {
+    public CELL_STATE getCurrentState() {
         return currentState;
     }
 
-    public void setCurrentState(STATE currentState) {
+    public void setCurrentState(CELL_STATE currentState) {
         this.currentState = currentState;
     }
 }
